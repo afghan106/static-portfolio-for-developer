@@ -1,0 +1,8 @@
+BEGIN
+  FOR i IN 1..100 LOOP
+    INSERT INTO employees (id, name, email, department)
+    VALUES (i, 'Employee ' || i, 'employee' || i || '@example.com', 'Department ' || FLOOR(DBMS_RANDOM.VALUE(1, 10)));
+  END LOOP;
+  COMMIT;
+END;
+/
